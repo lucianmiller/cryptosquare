@@ -17,7 +17,22 @@ function cleanUpInput(inputString) {
 };
 function createSquare(string) {
   const inputLength = string.length;
-  //next step is to use Math.sqrt(inputLength) ask Dan later
+  const squareRoot = Math.sqrt(inputLength);
+  const roundedSquareRoot = Math.floor(squareRoot);
+  const squareArr = [];
+  const charArr = string.split('');
+  for (index = 0; index < inputLength; index++){
+    const rowArr = [];
+    for (index2 = 0; rowArr.length <= roundedSquareRoot; index2++) {
+      rowArr.push(charArr[0]);
+      charArr.shift();
+      if(rowArr.length === roundedSquareRoot){
+        squareArr.push(rowArr);
+      }
+    }
+  }
+  console.log("Final Arr", squareArr);
+  return;
 };
 
 //User Logic--------------
